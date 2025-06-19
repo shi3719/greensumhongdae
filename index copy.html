@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="letter_containter">
+        <div class="letter_wrap">
+            <ul>
+            <il class="letter">D</il>
+            <li class="letter">R</li>
+            <li class="letter">A</li>
+            <li class="letter">W</li>
+            </ul>
+            <div class="video_wrap">
+                <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dmc0otx2q&public_id=_talkv_wxP8N26Wr6_sbYMSimG4UkXGEmRA8qPv1_talkv_high_ks7hqn&profile=cld-default&controls=false&muted=true&autoplay=true&loop=true&playsinline=true"
+                width="100%"
+                height="720"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <div class="letter_wrap">
+            <ul>
+            <li class="letter">Y</li>
+            <li class="letter">O</li>
+            <li class="letter">U</li>
+            <li class="letter">R</li>
+            </ul>
+        </div>
+        <div class="letter_wrap">
+            <ul>
+            <li class="letter">O</li>
+            <div class="video_wrap">
+                <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dmc0otx2q&public_id=_talkv_wxP6chGBNX_TX90QbG7GeivClwqWOQRrk_talkv_high_sw4uhm&profile=cld-default&controls=false&muted=true&autoplay=true&loop=true&playsinline=true"
+                width="100%"
+                height="720"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                ></iframe>
+            </div>
+            <li class="letter">W</li>
+            <li class="letter">N</li>
+            </ul>
+        </div>
+        <div class="letter_wrap">
+            <ul>
+            <li class="letter">P</li>
+            <div class="video_wrap vertical">
+                <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dmc0otx2q&public_id=_talkv_wxP4qUDYmB_DMhdDDdQ0SS4kWMK6VlxZ1_talkv_high_hwcknu&profile=cld-default&controls=false&muted=true&autoplay=true&loop=true&playsinline=true"
+                width="100%"
+                height="720"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                ></iframe>
+            </div>
+            <li class="letter">A</li>
+            <li class="letter">T</li>
+            <li class="letter">H</li>
+            </ul>
+        </div>
+</div>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    .video_wrap{
+        width: 0;
+        height: 80%;
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+        border-radius: 10px;
+
+        animation: videoOnHorizontal 0.4s ease-out forwards;
+        animation-delay: .5s;
+    }
+
+    .video_wrap.vertical{
+        animation: videoOnVertical 0.4s ease-out forwards;
+        animation-delay: .5s;
+    }
+
+    @keyframes videoOnHorizontal {
+        0% {width: 0vw; margin: 0%;}
+        100%{width: 8vw; margin: 10px 10px 0 10px;}        
+    }
+
+    @keyframes videoOnVertical {
+        0% {width: 0vw; margin: 0%;}
+        100%{width: 3.5vw; margin: 13px 7px 0 7px;}        
+    }
+
+    .video_wrap iframe{
+        border:0;
+        width: 100%;
+        max-height: 100%;
+        transform: scale(1.3);
+
+        border: none;
+        aspect-ratio: 16 / 9;
+        display: block;
+    }
+    
+    .letter_containter{
+        width: 50%;
+        margin: 50vw auto;
+        animation: sacle 0.4s ease-out forwards;
+        animation-delay: .5s;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .letter_containter {
+            margin: 10vw auto;
+
+            display: flex;
+            flex-wrap: wrap;
+         
+            justify-content: center;
+        }
+
+        .letter_wrap {
+            margin: 0 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .letter_wrap:nth-child(2n){
+            justify-content: flex-start;
+        }
+
+        .letter_wrap ul{
+            height: 100%;
+        }
+    }
+
+    @keyframes sacle {
+        0%   { transform: scale(1); }
+        100% { transform: scale(1.9); }
+    }
+
+    .letter_wrap{
+        position: relative;
+        height: 6vw;
+    }
+
+    .letter_wrap ul{
+        overflow: hidden;
+        display: flex;
+    }
+
+    .letter{
+        opacity: 0;
+        display: inline-block;
+        animation: popUp 0.2s ease-out forwards;
+
+        font-size: 6vw;
+        font-weight: 800;
+        line-height: 100%;
+    }
+
+    .letter:nth-child(2){
+        animation-delay: .1s;
+    }
+    .letter:nth-child(3){
+        animation-delay: .2s;
+    }
+    .letter:nth-child(4){
+        animation-delay: .3s;
+    }
+
+    @keyframes popUp {
+        0%   { opacity: 0; transform: translateY(20vw) scale(0.8); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes textCenterToLeft {
+        0%   { left: 50%; transform: translateX(-50%); }
+        100% { left: 0%; transform: translateX(0%); }
+    }
+
+    @keyframes textCenterToRight {
+        0%   { left: 50%; transform: translateX(-50%); }
+        100% { left: 100%; transform: translateX(-100%); }
+    }
+
+    @keyframes textRightToLeft {
+        0%   { left: 100%; transform: translateX(-100%); }
+        100% { left: 0%; transform: translateX(0%); }
+    }
+
+    @keyframes textLeftToRight {
+        0%   { left: 0%; transform: translateX(0%); }
+        100% { left: 100%; transform: translateX(-100%); }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .letter_wrap ul{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            animation: textCenterToLeft 0.4s ease-out forwards;
+            animation-delay: .5s;
+        }
+
+        .letter_wrap:nth-child(2n) ul{
+        animation: textCenterToRight 0.4s ease-out forwards;
+        animation-delay: .5s;
+        }
+
+        .letter_containter.ver1 .letter_wrap ul{
+            animation: textRightToLeft 0.4s ease-out forwards;
+        }
+
+        .letter_containter.ver1 .letter_wrap:nth-child(2n) ul{
+            animation: textLeftToRight 0.4s ease-out forwards;
+        }
+
+        .letter_containter.ver2 .letter_wrap ul{
+            animation: textLeftToRight 0.4s ease-out forwards;
+        }
+
+        .letter_containter.ver2 .letter_wrap:nth-child(2n) ul{
+            animation: textRightToLeft 0.4s ease-out forwards;
+        }
+
+        .letter{
+            font-size: 13vw;
+        }
+
+        .letter_wrap{
+            height: 13vw;
+        }
+    }
+            
+</style>
+</body>
+</html>
